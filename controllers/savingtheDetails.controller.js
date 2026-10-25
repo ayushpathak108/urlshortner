@@ -23,13 +23,14 @@ export const savingthedetail=async(req,res)=>{
        
        // link[finalShort]=url;//changed for mongodb
         //save(link)//changed for mongodb
-        save({url,finalShort})
+        await save({url,finalShort})
        res.redirect(`/parcel/${finalShort}`)
        // await writeFile('link.json',JSON.stringify(link))
     }
 
     catch(error){
 console.log(error)
+res.status(500).send("Unable to save the link")
     }
 
 }

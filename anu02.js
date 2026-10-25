@@ -8,8 +8,8 @@ app.use(express.static('pub'));
 app.use(express.urlencoded())
 
 app.use("/",routes)
-const port=process.env.pro;
+const port=process.env.PORT || process.env.pro || 3000;
 
 app.listen(port,()=>{
-    console.log("running on+ "+port+ "port")
+    console.log("running on "+port+" port")
 })

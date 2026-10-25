@@ -1,1 +1,12 @@
-add ur own .env file, with a mongo_url and a port number(pro)
+## Run and deploy
+
+Install dependencies with `npm install` and start the app with `npm start`.
+
+For local development, copy `.env.example` to `.env` and set `mongo_url` and
+`mongodb_name` to match your MongoDB deployment. The app uses the host-provided
+`PORT` when available, then falls back to `pro` and port `3000`.
+
+For a Node.js hosting service, use `npm install` as the build command and
+`npm start` as the start command. Configure `mongo_url` and `mongodb_name` as
+environment variables in the host's settings; the host should provide `PORT`.
+Do not commit `.env` or put database credentials in source control.
